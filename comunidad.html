@@ -1,32 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidad - Balance Space</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comunidad - Balance Space</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .forum-box { display: none; margin-top: 15px; }
+    .testimonial-img { width: 100px; border-radius: 50%; cursor: pointer; }
+    .story-popup {
+      display: none;
+      background: white;
+      border: 2px solid var(--color1);
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Comunidad</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-            <li><a href="recursos.html">Recursos</a></li>
-            <li><a href="enfermedades.html">Enfermedades Mentales</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h2>Foro de Discusión</h2>
-        <p>Únete a nuestro foro para compartir experiencias y apoyarte mutuamente.</p>
-    </main>
-    <footer>
-        <p>&copy; 2025 Balance Space. Todos los derechos reservados.</p>
-    </footer>
+  <header>
+    <h1>Comunidad</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+      <li><a href="enfermedades.html">Enfermedades Mentales</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main class="community-section">
+    <section class="forum">
+      <h2>Foro de Discusión</h2>
+      <p>Comparte tus experiencias y recibe apoyo de otros usuarios.</p>
+      <button class="cta-button" onclick="document.querySelector('.forum-box').style.display='block'">Participar en el foro</button>
+      <div class="forum-box">
+        <textarea rows="4" placeholder="Escribe tu mensaje aquí..."></textarea><br>
+        <button class="btn-submit">Enviar</button>
+      </div>
+    </section>
+
+    <section class="success-stories">
+      <h2>Historias de Éxito</h2>
+      <div class="testimonial">
+        <img src="https://www.shutterstock.com/image-photo/passport-photo-serious-brazilian-young-600nw-1956224953.jpg" alt="Foto de Andrés" class="testimonial-img" onclick="toggleStory('andres-story')">
+        <blockquote>“Gracias a Balance Space, pude entender mi ansiedad y sentirme acompañado.”</blockquote>
+        <cite>- Andrés, 22 años</cite>
+        <div id="andres-story" class="story-popup">
+          Andrés atravesó una etapa de ansiedad severa durante la universidad. A través de grupos de apoyo y orientación profesional, encontró nuevas herramientas para gestionarla y hoy comparte su testimonio para inspirar a otros.
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <img src="https://st4.depositphotos.com/1000824/27255/i/450/depositphotos_272553236-stock-photo-close-up-portrait-of-pretty.jpg" alt="Foto de Sofía" class="testimonial-img" onclick="toggleStory('sofia-story')">
+        <blockquote>“Los grupos de apoyo me motivaron a buscar ayuda profesional.”</blockquote>
+        <cite>- Sofía, 19 años</cite>
+        <div id="sofia-story" class="story-popup">
+          Sofía sintió durante años que no podía hablar de su depresión. Participar en Balance Space le dio un espacio seguro donde pudo abrirse, buscar terapia y mejorar su calidad de vida.
+        </div>
+      </div>
+    </section>
+
+    <section class="events">
+      <h2>Próximos Eventos</h2>
+      <ul>
+        <li>🗓️ Taller de manejo del estrés - 10 de julio</li>
+        <li>🗓️ Foro en vivo con psicólogos - 15 de julio</li>
+        <li>🗓️ Webinar gratuito sobre ansiedad - 20 de julio</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Balance Space. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function toggleStory(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
