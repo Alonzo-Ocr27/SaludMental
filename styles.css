@@ -462,3 +462,19 @@ nav a:hover {
 .servicio-extra h2 {
   color: var(--color1);
 }
+
+/*  Iconos Redes sociales */
+.fa-instagram {
+  color: #E4405F;
+}
+.fa-facebook {
+  color: #1877F3;
+}
+.fa-x-twitter {
+  color: #000000;
+}
+
+.about-contact i:hover {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
